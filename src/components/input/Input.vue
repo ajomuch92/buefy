@@ -265,6 +265,14 @@ export default {
         updateValue(value) {
             this.computedValue = value
             !this.isValid && this.checkHtml5Validity()
+        },
+
+        focus() {
+            if (this.type !== 'textarea') {
+                this.$refs.input.focus();
+            } else {
+                this.$refs.textarea.focus();
+            }
         }
     }
 }
