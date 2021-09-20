@@ -269,9 +269,13 @@ export default {
 
         focus() {
             if (this.type !== 'textarea') {
-                this.$refs.input.focus();
+                this.$nextTick(() => {
+                    this.$refs.input.focus();
+                });
             } else {
-                this.$refs.textarea.focus();
+                this.$nextTick(() => {
+                    this.$refs.textarea.focus();
+                });
             }
         }
     }
